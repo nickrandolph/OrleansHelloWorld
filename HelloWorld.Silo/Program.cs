@@ -16,10 +16,10 @@ app.UseRouting();
 
 // Uncomment this to expose an endpoint that can be opened
 // in the browser to test that the silo is up and running
-//app.MapGet("/", async (IGrainFactory grainFactory) =>
-//{
-//    var grain = grainFactory.GetGrain<IHelloWorld>(Guid.Empty);
-//    return await grain.SayHelloWorld();
-//});
+app.MapGet("/", async (IGrainFactory grainFactory) =>
+{
+    var grain = grainFactory.GetGrain<IHelloWorld>(Guid.Empty);
+    return await grain.SayHelloWorld();
+});
 
 app.Run();
